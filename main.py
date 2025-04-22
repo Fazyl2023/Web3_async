@@ -47,7 +47,7 @@ class Client:
     
     async def zapis(self):
         balance = await self.get_balance()
-        async with aiofiles.open("site.txt", "a") as f:
+        async with aiofiles.open("wallets.txt", "a") as f:
             return await f.write(f'\naddress: {self.account.address} \n private key: {self.account.key.hex()} \n balance: {balance}')
     
     async def close(self):
